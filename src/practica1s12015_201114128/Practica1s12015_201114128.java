@@ -16,6 +16,7 @@ public class Practica1s12015_201114128 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println("ahora si ya pude subir a github heeeeee ya puedo jajajaja ");
     }
     
 }
