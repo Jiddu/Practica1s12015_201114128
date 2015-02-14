@@ -101,10 +101,11 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
            Pantalla_de_Seleccion anterior= new Pantalla_de_Seleccion();
-        anterior.hide();
+        anterior.show(false);
         
-        Plantas siguiente= new Plantas();
+        ListaPlantas siguiente= new ListaPlantas();
         siguiente.show(true);
+        
         
         
         
