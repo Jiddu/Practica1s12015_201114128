@@ -10,36 +10,47 @@ package practica1s12015_201114128;
  * @author asus
  */
 public class Lista_UsuarioZombie {
+
+  
     String Nombre;
     int Cantidad;
     String Campo;
     Lista_UsuarioZombie siguiente;
     Lista_UsuarioZombie anterior;
     
-    public Lista_UsuarioZombie(String Nombre/*, int Cantidad, String Campo*/){
+    public Lista_UsuarioZombie(String Nombre,int Cantidad, String Campo){
     this.Nombre=Nombre;
     this.Cantidad=Cantidad;
     this.Campo=Campo;
     siguiente=null;
     anterior=null;
     
+    } 
+    
+    
+      public String getNombre() {
+        return Nombre;
     }
-    
-    
-    
-    
-    
-        public String getDatos(){
-    
-    return Nombre;
-           // return Integer.toString(Cantidad);
-                  //  return Campo;
-    
-    }
-        
-        
-        public void setDatos(String Nombre) {
+
+    public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
-        
+
+    public int getCantidad() {
+        return Cantidad;
+    }
+
+    public void setCantidad(int Cantidad) {
+        this.Cantidad = Cantidad;
+    }
+
+    public String getCampo() {
+        return Campo;
+    }
+
+    public void setCampo(String Campo) {
+        this.Campo = Campo;
+    }
+    
+    
 }

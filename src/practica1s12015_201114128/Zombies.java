@@ -23,15 +23,15 @@ public class Zombies {
         }else{ return false;}
     }
     
-     public Zombies SetNombre(String Nombre){
+     public Zombies SetNombre(String Nombre,int Cantidad,String Campo){
      if(estavacio()){
-      Lista_UsuarioZombie nuevo = new Lista_UsuarioZombie (Nombre);
+      Lista_UsuarioZombie nuevo = new Lista_UsuarioZombie (Nombre, Cantidad, Campo);
       siguiente=nuevo;
       anterior=nuevo;
       nuevo.siguiente=nuevo;
       nuevo.anterior=nuevo;
      }else{
-      Lista_UsuarioZombie  nuevo = new Lista_UsuarioZombie (Nombre);
+      Lista_UsuarioZombie  nuevo = new Lista_UsuarioZombie (Nombre, Cantidad, Campo);
       siguiente.siguiente=nuevo;
       nuevo.anterior=anterior;
       anterior=nuevo;//

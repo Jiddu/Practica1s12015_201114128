@@ -6,13 +6,16 @@
 package practica1s12015_201114128;
 
 import java.awt.BorderLayout;
+import javax.swing.JOptionPane;
+import static practica1s12015_201114128.Usuario_Zombie.JugadorZombie;
 
 /**
  *
  * @author asus
  */
 public class Pantalla_de_Seleccion extends javax.swing.JFrame {
-
+   Lista_UsuarioZombie actual;
+   
     /**
      * Creates new form Pantalla_de_Seleccion
      */
@@ -20,6 +23,7 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
         initComponents();
         
           IPantalla_de_Seleccion pinicio=new IPantalla_de_Seleccion();
+          this.setLocationRelativeTo(null);
         this.add(pinicio,BorderLayout.CENTER);
                 this.pack();
                  this.setSize(915,620);
@@ -68,8 +72,18 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
         });
 
         jButton3.setText("Comenzar Juego");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Eliminar Datos");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("salir");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +161,33 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
        Usuario_Zombie UZ= new Usuario_Zombie();
        UZ.show(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        
+        //  Lista_UsuarioZombie actual;
+       actual=JugadorZombie.siguiente;
+        
+        while(actual!=JugadorZombie.anterior){
+            System.out.println(actual.getNombre()+actual.getCantidad()+actual.getCampo());
+            
+            actual=actual.siguiente;}
+        System.out.println(actual.getNombre()+actual.getCantidad()+actual.getCampo());
+        
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+         actual=JugadorZombie.siguiente;
+        
+        if(actual==null ){
+        
+        JOptionPane.showMessageDialog(null,"Usuario Zombi No Creado","Mensaje de Advertencia",JOptionPane.WARNING_MESSAGE);
+        
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

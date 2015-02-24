@@ -23,6 +23,7 @@ public class Usuario_Zombie extends javax.swing.JFrame {
         this.add(pinicio,BorderLayout.CENTER);
                 this.pack();
                  this.setSize(915,620);
+                  this.setLocationRelativeTo(null);
     }
  //LISTA DE LOS PERSONAJES ZOMBIES
        static Zombies JugadorZombie = new Zombies();
@@ -43,6 +44,8 @@ public class Usuario_Zombie extends javax.swing.JFrame {
         txtcantidadpersonajesinicial = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtotroscampos = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +74,8 @@ public class Usuario_Zombie extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("Otros Campos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -78,31 +83,37 @@ public class Usuario_Zombie extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton2))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addGap(47, 47, 47)
-                        .addComponent(jButton1)
-                        .addGap(87, 87, 87))
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtnombrezombie, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcantidadpersonajesinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jButton2))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                                .addComponent(jButton3)
+                                .addGap(47, 47, 47)
+                                .addComponent(jButton1)
+                                .addGap(87, 87, 87))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtnombrezombie, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                                    .addComponent(txtcantidadpersonajesinicial)
+                                    .addComponent(txtotroscampos))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(239, Short.MAX_VALUE)
+                .addContainerGap(184, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtnombrezombie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtcantidadpersonajesinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -110,14 +121,18 @@ public class Usuario_Zombie extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
+                                .addGap(90, 90, 90)
                                 .addComponent(jButton1))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(txtotroscampos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(35, 35, 35)
                                 .addComponent(jButton2)))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(82, 82, 82)
                         .addComponent(jButton3)
                         .addGap(21, 21, 21))))
         );
@@ -132,32 +147,27 @@ public class Usuario_Zombie extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if(!txtnombrezombie.getText().equals("")){
-            Usuario_Zombie.JugadorZombie.SetNombre(txtnombrezombie.getText().toString());
+        if(!txtnombrezombie.getText().equals("") && !txtcantidadpersonajesinicial.getText().equals("")){
+            Pantalla_de_Seleccion.JugadorZombie.SetNombre(txtnombrezombie.getText().toString(),Integer.parseInt( txtcantidadpersonajesinicial.getText()),txtotroscampos.getText().toString());
+            //Pantalla_de_Seleccion.JugadorZombie.(txtnombrezombie.getText().toString());
             this.dispose();
         }else{
-            JOptionPane.showMessageDialog(this,"Escribe un puto nombre!");
+            JOptionPane.showMessageDialog(null,"PARA PODER JUGAR AL MENOS DEBE DE LLENAR LOS CAMPOS NOMBRE Y CANTIDAD DE PERSONAJES","Mensaje Informacion",JOptionPane.INFORMATION_MESSAGE); 
+            txtnombrezombie.setFocusable(true);
         }
         
-        //if (txtnombrezombie.getText())
+      
         
-        
+        Pantalla_de_Seleccion anterior= new Pantalla_de_Seleccion();
+        anterior.show(true);
+       // this.dispose();
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        
-        
-         Lista_UsuarioZombie actual;
-        actual=JugadorZombie.siguiente;
-        
-        while(actual!=JugadorZombie.anterior){
-            System.out.println(actual.getDatos());
-            
-            actual=actual.siguiente;}
-        System.out.println(actual.getDatos());
+               
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -201,7 +211,9 @@ public class Usuario_Zombie extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField txtcantidadpersonajesinicial;
     private javax.swing.JTextField txtnombrezombie;
+    private javax.swing.JTextField txtotroscampos;
     // End of variables declaration//GEN-END:variables
 }
