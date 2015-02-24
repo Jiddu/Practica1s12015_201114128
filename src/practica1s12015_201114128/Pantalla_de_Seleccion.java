@@ -36,9 +36,15 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
     
     //LISTA DE LOS PERSONAJES ZOMBIES
        static Zombies JugadorZombie = new Zombies();
-        static         Lista_UsuarioZombie ListaUZ; 
+        static Lista_UsuarioZombie ListaUZ; 
     
+        
+        //LISTA DE LOS PERSONAJES PLANTAS
+       static Plantas JugadorPlanta = new Plantas();
+        static Lista_UsuarioPlanta ListaUP; 
  
+        
+       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -141,7 +147,7 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
         //anterior.show(false);
         this.dispose();
         
-        ListaPlantas siguiente= new ListaPlantas();
+        Usuario_Planta siguiente= new Usuario_Planta();
         siguiente.show(true);
         
         
@@ -184,9 +190,12 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
         
         if(actual==null ){
         
-        JOptionPane.showMessageDialog(null,"Usuario Zombi No Creado","Mensaje de Advertencia",JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Usuario Zombi No Creado","Mensaje Error",JOptionPane.ERROR_MESSAGE);
         
+        }else if (actual != null){
+        JOptionPane.showMessageDialog(null,actual.getNombre(),"Mensaje Informacion",JOptionPane.INFORMATION_MESSAGE);
         }
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
