@@ -24,8 +24,17 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
                 this.pack();
                  this.setSize(915,620);
                 // jLabel2.setVisible(false);
-    }
+                 
+  }
 
+    
+    
+    
+    //LISTA DE LOS PERSONAJES ZOMBIES
+       static Zombies JugadorZombie = new Zombies();
+        static         Lista_UsuarioZombie ListaUZ; 
+    
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,6 +61,11 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
         });
 
         jButton2.setText("Jugador Zombis");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Comenzar Juego");
 
@@ -110,7 +124,8 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         Pantalla_de_Seleccion anterior= new Pantalla_de_Seleccion();
-        anterior.show(false);
+        //anterior.show(false);
+        this.dispose();
         
         ListaPlantas siguiente= new ListaPlantas();
         siguiente.show(true);
@@ -120,6 +135,18 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
         
      
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+          Pantalla_de_Seleccion anterior= new Pantalla_de_Seleccion();
+        //anterior.show(false);
+        this.dispose();
+        
+        
+       Usuario_Zombie UZ= new Usuario_Zombie();
+       UZ.show(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
