@@ -7,14 +7,15 @@ package practica1s12015_201114128;
 
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
-import static practica1s12015_201114128.Usuario_Zombie.JugadorZombie;
+
 
 /**
  *
  * @author asus
  */
 public class Pantalla_de_Seleccion extends javax.swing.JFrame {
-   Lista_UsuarioZombie actual;
+//   Lista_UsuarioZombie actual;
+//   Lista_UsuarioPlanta temporal;
    
     /**
      * Creates new form Pantalla_de_Seleccion
@@ -31,18 +32,6 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
                  
   }
 
-    
-    
-    
-    //LISTA DE LOS PERSONAJES ZOMBIES
-       static Zombies JugadorZombie = new Zombies();
-        static Lista_UsuarioZombie ListaUZ; 
-    
-        
-        //LISTA DE LOS PERSONAJES PLANTAS
-       static Plantas JugadorPlanta = new Plantas();
-        static Lista_UsuarioPlanta ListaUP; 
- 
         
        
     /**
@@ -147,8 +136,8 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
         //anterior.show(false);
         this.dispose();
         
-        Usuario_Planta siguiente= new Usuario_Planta();
-        siguiente.show(true);
+       UsuarioPlanta siguiente= new UsuarioPlanta();
+       siguiente.show(true);
         
         
         
@@ -164,37 +153,46 @@ public class Pantalla_de_Seleccion extends javax.swing.JFrame {
         this.dispose();
         
         
-       Usuario_Zombie UZ= new Usuario_Zombie();
+       UsuarioZombie UZ= new UsuarioZombie();
        UZ.show(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        
-        //  Lista_UsuarioZombie actual;
-       actual=JugadorZombie.siguiente;
-        
-        while(actual!=JugadorZombie.anterior){
-            System.out.println(actual.getNombre()+actual.getCantidad()+actual.getCampo());
-            
-            actual=actual.siguiente;}
-        System.out.println(actual.getNombre()+actual.getCantidad()+actual.getCampo());
-        
+//        Usuario_Planta nuevo = new Usuario_Planta();
+//        
+//        nuevo.getName();
+//        //  Lista_UsuarioZombie actual;
+//       actual=JugadorZombie.siguiente;
+//        
+//        while(actual!=JugadorZombie.anterior){
+//            System.out.println(actual.getNombre()+actual.getCantidad()+actual.getCampo());
+//            
+//            actual=actual.siguiente;}
+//        System.out.println(actual.getNombre()+actual.getCantidad()+actual.getCampo());
+//        System.out.println(ListaUZ); 
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         
-         actual=JugadorZombie.siguiente;
-        
-        if(actual==null ){
-        
-        JOptionPane.showMessageDialog(null,"Usuario Zombi No Creado","Mensaje Error",JOptionPane.ERROR_MESSAGE);
-        
-        }else if (actual != null){
-        JOptionPane.showMessageDialog(null,actual.getNombre(),"Mensaje Informacion",JOptionPane.INFORMATION_MESSAGE);
-        }
+//         actual=JugadorZombie.siguiente;
+//       //  temporal=JugadorPlanta.siguiente;
+//        
+//        if(actual==null ){
+//            
+//        
+//        JOptionPane.showMessageDialog(null,"Usuario Zombi No Creado","Mensaje Error",JOptionPane.ERROR_MESSAGE);
+//        
+//        }if (temporal ==null){
+//        
+//              JOptionPane.showMessageDialog(null,"Usuario Planta No Creado","Mensaje Error",JOptionPane.ERROR_MESSAGE);
+//            
+//        }else if (actual != null && temporal != null){
+//        JOptionPane.showMessageDialog(null,actual.getNombre(),"Mensaje Informacion",JOptionPane.INFORMATION_MESSAGE);
+//       // JOptionPane.showMessageDialog(null,temporal.getNombre(),"Mensaje Informacion",JOptionPane.INFORMATION_MESSAGE);
+//        }
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
