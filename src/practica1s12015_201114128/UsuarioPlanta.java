@@ -5,6 +5,7 @@
  */
 package practica1s12015_201114128;
 
+import java.awt.BorderLayout;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
@@ -21,6 +22,12 @@ public class UsuarioPlanta extends javax.swing.JFrame {
      */
     public UsuarioPlanta() {
         initComponents();
+        
+        IUsuarioPlanta pinicio=new IUsuarioPlanta();
+        this.add(pinicio,BorderLayout.CENTER);
+                this.pack();
+                 this.setSize(915,620);
+                  this.setLocationRelativeTo(null);
     }
 
     /**
@@ -40,8 +47,10 @@ public class UsuarioPlanta extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         txtCantidad = new javax.swing.JTextField();
         txtDatosExtra = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Ingrese su Nombre:");
 
@@ -63,6 +72,13 @@ public class UsuarioPlanta extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("JUGAR");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -78,17 +94,19 @@ public class UsuarioPlanta extends javax.swing.JFrame {
                             .addComponent(jButton2)))
                     .addComponent(jLabel3)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtCantidad, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                    .addComponent(txtNombre)
-                    .addComponent(txtDatosExtra))
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtCantidad)
+                        .addComponent(txtNombre)
+                        .addComponent(txtDatosExtra, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton3))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(215, Short.MAX_VALUE)
+                .addContainerGap(270, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -103,7 +121,8 @@ public class UsuarioPlanta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addGap(7, 7, 7))
         );
 
@@ -131,6 +150,18 @@ public class UsuarioPlanta extends javax.swing.JFrame {
         System.out.println(jugador.datoextra);
         System.out.println(ingreso.size());
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+     
+        this.dispose();
+      
+        Pantalla_de_Seleccion inicio = new Pantalla_de_Seleccion();
+        inicio.show(true);
+        
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,6 +201,7 @@ public class UsuarioPlanta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
